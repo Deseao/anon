@@ -6,9 +6,11 @@ import (
 	"github.com/Deseao/anon/api/internal/group"
 	"github.com/Deseao/anon/api/internal/middleware"
 	"github.com/Deseao/anon/api/internal/participant"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
+	"time"
 )
 
 func main() {
@@ -23,6 +25,17 @@ func main() {
 	participant.Twilio_account_id = conf.Twilio.AccountID
 	participant.Twilio_from_number = conf.Twilio.FromNumber
 	router := gin.Default()
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:8081"},
+		AllowMethods:     []string{"GET", "POST"},
+		AllowHeaders:     []string{"Origin"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+		AllowOriginFunc: func(origin string) bool {
+			return true
+		},
+		MaxAge: 12 * time.Hour,
+	}))
 	groupHandler := group.GroupHandler{}
 	router.Use(middleware.GroupHandler(&groupHandler))
 	router.GET("/ping", Ping)
