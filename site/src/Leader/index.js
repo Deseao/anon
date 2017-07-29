@@ -1,3 +1,4 @@
 import Leader from './Leader'
 import CreateGroup from './CreateGroup'
-export {Leader, CreateGroup}
+import SendMessage from './SendMessage'
+export {Leader, CreateGroup, SendMessage}

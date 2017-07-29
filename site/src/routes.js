@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
 import {Greeting} from './Greeting/index'
-import {Leader, CreateGroup} from './Leader/index'
+import {Leader, CreateGroup, SendMessage} from './Leader/index'
 import {Participant} from './Participant/index'
 
 class Routes extends React.Component {
@@ -27,6 +27,7 @@ class App extends React.Component {
         <Route exact path="/" component={Greeting} />
         <Route exact path="/leader" component={Leader}/>
         <Route exact path="/leader/createGroup" component={CreateGroup} />
+        <Route exact path="/leader/sendMessage" component={SendMessage} />
         <Route exact path="/participant" component={Participant} />
       </div>
     )
