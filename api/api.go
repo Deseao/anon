@@ -74,6 +74,5 @@ func SendMessage(c *gin.Context) {
 	if err != nil {
 		c.Status(http.StatusInternalServerError)
 	}
-	fmt.Println("Message to first participant in first group: ", groupHandler.Groups[0].Participants[0].Message)
 	c.Status(http.StatusOK)
 }
