@@ -5,7 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GroupHandler(c *gin.Context) {
-	handler := group.GroupHandler{}
-	c.Set("groupHandler", handler)
+func GroupHandler(handler *group.GroupHandler) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Set("groupHandler", handler)
+	}
 }
