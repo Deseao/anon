@@ -1,3 +1,9 @@
 [sendgrid]
     apiKey="${SENDGRID_API_KEY}"
     fromAddress="no-reply@deseao.tech"
+
+[twilio]
+    sid="${TWILIO_SID}"
+    key="${TWILIO_API_KEY}"
+    accountId="AC9e1a192e1a622f0b3547b3a9899ba912"
+    fromNumber="+17739855437"
