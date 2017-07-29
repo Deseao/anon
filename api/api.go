@@ -18,6 +18,10 @@ func main() {
 	}
 	participant.Email_api_key = conf.SendGrid.Key
 	participant.From_address = conf.SendGrid.FromAddress
+	participant.Twilio_sid = conf.Twilio.SID
+	participant.Twilio_api_key = conf.Twilio.Key
+	participant.Twilio_account_id = conf.Twilio.AccountID
+	participant.Twilio_from_number = conf.Twilio.FromNumber
 	router := gin.Default()
 	groupHandler := group.GroupHandler{}
 	router.Use(middleware.GroupHandler(&groupHandler))
