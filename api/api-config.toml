@@ -1,0 +1,3 @@
+[sendgrid]
+    apiKey="${SENDGRID_API_KEY}"
+    fromAddress="no-reply@deseao.tech"

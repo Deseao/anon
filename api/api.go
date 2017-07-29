@@ -2,13 +2,22 @@ package main
 
 import (
 	"fmt"
+	"github.com/Deseao/anon/api/internal/config"
 	"github.com/Deseao/anon/api/internal/group"
 	"github.com/Deseao/anon/api/internal/middleware"
+	"github.com/Deseao/anon/api/internal/participant"
 	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
 )
 
 func main() {
+	conf, err := config.ReadConfig("api-config.toml")
+	if err != nil {
+		log.Fatal("Could not read config: ", err)
+	}
+	participant.Email_api_key = conf.SendGrid.Key
+	participant.From_address = conf.SendGrid.FromAddress
 	router := gin.Default()
 	groupHandler := group.GroupHandler{}
 	router.Use(middleware.GroupHandler(&groupHandler))
