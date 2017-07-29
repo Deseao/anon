@@ -2,7 +2,6 @@ package group
 
 import (
 	"errors"
-	"fmt"
 )
 
 type GroupHandler struct {
