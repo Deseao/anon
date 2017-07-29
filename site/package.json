@@ -1,0 +1,40 @@
+{
+  "name": "anon",
+  "version": "1.0.0",
+  "description": "Contact people anonymously",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node_modules/.bin/webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deseao/anon.git"
+  },
+  "keywords": [
+    "anonymous"
+  ],
+  "author": "Alex Haynes",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^20.0.4",
+    "regenerator-runtime": "^0.10.5",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.2"
+  },
+  "bugs": {
+    "url": "https://github.com/Deseao/anon/issues"
+  },
+  "homepage": "https://github.com/Deseao/anon#readme"
+}
