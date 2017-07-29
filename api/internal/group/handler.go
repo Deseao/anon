@@ -40,3 +40,12 @@ func (gh *GroupHandler) AddParticipant(groupCode string, email string, phone str
 	}
 	return errors.New("Group Not Found For Code " + groupCode)
 }
+
+func (gh *GroupHandler) SendMessage(groupCode string, message string) error {
+	groupToSendTo := gh.getGroupByCode(groupCode)
+	if groupToSendTo != nil {
+		groupToSendTo.SendMessage(message)
+		return nil
+	}
+	return errors.New("Group Not Found For Code " + groupCode)
+}

@@ -9,3 +9,8 @@ type SignupPayload struct {
 	Email string `json:"email"`
 	Phone string `json:"phone"`
 }
+
+type MessagePayload struct {
+	Code    string `json:"code"`
+	Message string `json:"message"`
+}

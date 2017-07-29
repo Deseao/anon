@@ -53,5 +53,14 @@ func Signup(c *gin.Context) {
 }
 
 func SendMessage(c *gin.Context) {
+	groupHandler := c.MustGet("groupHandler").(*group.GroupHandler)
+	var messagePayload MessagePayload
+	c.BindJSON(&messagePayload)
+	fmt.Println("Message Payload", messagePayload)
+	err := groupHandler.SendMessage(messagePayload.Code, messagePayload.Message)
+	if err != nil {
+		c.Status(http.StatusInternalServerError)
+	}
+	fmt.Println("Message to first participant in first group: ", groupHandler.Groups[0].Participants[0].Message)
 	c.Status(http.StatusOK)
 }
