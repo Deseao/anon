@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/Deseao/anon/api/internal/config"
-	"github.com/Deseao/anon/api/internal/group"
-	"github.com/Deseao/anon/api/internal/middleware"
-	"github.com/Deseao/anon/api/internal/participant"
+	"github.com/Deseao/anon/internal/config"
+	"github.com/Deseao/anon/internal/group"
+	"github.com/Deseao/anon/internal/middleware"
+	"github.com/Deseao/anon/internal/participant"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"log"

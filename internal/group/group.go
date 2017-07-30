@@ -1,8 +1,8 @@
 package group
 
 import (
-	"github.com/Deseao/anon/api/internal/code"
-	"github.com/Deseao/anon/api/internal/participant"
+	"github.com/Deseao/anon/internal/code"
+	"github.com/Deseao/anon/internal/participant"
 )
 
 type Group struct {

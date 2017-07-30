@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"github.com/Deseao/anon/api/internal/group"
+	"github.com/Deseao/anon/internal/group"
 	"github.com/gin-gonic/gin"
 )
 
