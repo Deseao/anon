@@ -271,8 +271,8 @@ func (d *FileDescriptor) VarName() string { return fmt.Sprintf("fileDescriptor%d
 
 // goPackageOption interprets the file's go_package option.
 // If there is no go_package, it returns ("", "", false).
-// If there's a simple name, it returns ("", pkg, true).
-// If the option implies an import path, it returns (impPath, pkg, true).
+// If there's a simple name, it returns ("", internal, true).
+// If the option implies an import path, it returns (impPath, internal, true).
 func (d *FileDescriptor) goPackageOption() (impPath, pkg string, ok bool) {
 	pkg = d.GetOptions().GetGoPackage()
 	if pkg == "" {
@@ -418,8 +418,8 @@ func (ms *messageSymbol) GenerateAlias(g *Generator, pkg string) {
 		typ := get.typ
 		val := "(*" + remoteSym + ")(m)." + get.name + "()"
 		if get.genType {
-			// typ will be "*pkg.T" (message/group) or "pkg.T" (enum)
-			// or "map[t]*pkg.T" (map to message/enum).
+			// typ will be "*internal.T" (message/group) or "internal.T" (enum)
+			// or "map[t]*internal.T" (map to message/enum).
 			// The first two of those might have a "[]" prefix if it is repeated.
 			// Drop any package qualifier since we have hoisted the type into this package.
 			rep := strings.HasPrefix(typ, "[]")
@@ -1011,7 +1011,7 @@ func (g *Generator) BuildTypeNameMap() {
 	for _, f := range g.allFiles {
 		// The names in this loop are defined by the proto world, not us, so the
 		// package name may be empty.  If so, the dotted package name of X will
-		// be ".X"; otherwise it will be ".pkg.X".
+		// be ".X"; otherwise it will be ".internal.X".
 		dottedPkg := "." + f.GetPackage()
 		if dottedPkg != "." {
 			dottedPkg += "."

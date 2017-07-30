@@ -824,7 +824,7 @@ func EnumValueMap(enumType string) map[string]int32 {
 }
 
 // A registry of all linked message types.
-// The string is a fully-qualified proto name ("pkg.Message").
+// The string is a fully-qualified proto name ("internal.Message").
 var (
 	protoTypes    = make(map[string]reflect.Type)
 	revProtoTypes = make(map[reflect.Type]string)

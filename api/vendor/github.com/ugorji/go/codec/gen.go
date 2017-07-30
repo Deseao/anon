@@ -387,7 +387,7 @@ func (x *genRunner) genRefPkgs(t reflect.Type) {
 				x.imn[tpkg] = tpkg
 			} else {
 				x.imc++
-				x.imn[tpkg] = "pkg" + strconv.FormatUint(x.imc, 10) + "_" + genGoIdentifier(tpkg[idx+1:], false)
+				x.imn[tpkg] = "internal" + strconv.FormatUint(x.imc, 10) + "_" + genGoIdentifier(tpkg[idx+1:], false)
 			}
 		}
 	}

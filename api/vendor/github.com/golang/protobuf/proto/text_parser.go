@@ -318,7 +318,7 @@ func unescape(s string) (ch string, tail string, err error) {
 	return "", "", fmt.Errorf(`unknown escape \%c`, r)
 }
 
-// Adapted from src/pkg/strconv/quote.go.
+// Adapted from src/internal/strconv/quote.go.
 func unhex(b byte) (v byte, ok bool) {
 	switch {
 	case '0' <= b && b <= '9':

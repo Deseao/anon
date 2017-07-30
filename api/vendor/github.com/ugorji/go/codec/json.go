@@ -304,7 +304,7 @@ func (e *jsonEncDriver) EncodeAsis(v []byte) {
 }
 
 func (e *jsonEncDriver) quoteStr(s string) {
-	// adapted from std pkg encoding/json
+	// adapted from std internal encoding/json
 	const hex = "0123456789abcdef"
 	w := e.w
 	w.writen1('"')

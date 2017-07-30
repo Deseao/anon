@@ -239,7 +239,7 @@ func Generate(outfile, buildTag, codecPkgPath string, uid int64, useUnsafe bool,
 	// frunName := filepath.Join(os.TempDir(), "codecgen-"+strconv.FormatInt(time.Now().UnixNano(), 10)+".go")
 
 	frunMainName := "codecgen-main-" + tv.RandString + ".generated.go"
-	frunPkgName := "codecgen-pkg-" + tv.RandString + ".generated.go"
+	frunPkgName := "codecgen-internal-" + tv.RandString + ".generated.go"
 	if deleteTempFile {
 		defer os.Remove(frunMainName)
 		defer os.Remove(frunPkgName)
